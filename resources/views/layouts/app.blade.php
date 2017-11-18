@@ -22,9 +22,9 @@
         </div>
 
         <ul class="nav navbar-nav ">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'PostsController@index');
+Route::get('/services', 'PagesController@services');
+Route::get('/contact', 'PagesController@contact');
