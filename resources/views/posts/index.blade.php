@@ -2,31 +2,32 @@
 @section('content')
 
 <div class="jumbotron text-center">
-    <h1>Welcome to LaravelBlog</h1>
+    <h1>Welcome to {{config('app.name')}}</h1>
     <p>Simple blog page powered by <a href="https://laravel.com/" target="_blank">Laravel PHP Framework</a></p>
 </div>
 
 <div class="row">
 
     <div class="col-md-8">
+        @foreach($posts as $post)
+            <div class="panel panel-default">
 
-        <div class="panel panel-default">
+                <img src="{{asset('img/post_noimage.png')}}">
+                <div class="panel-body">
+                    <h2>{{$post->title}}</h2>
 
-            <img src="{{asset('img/post_noimage.png')}}">
-            <div class="panel-body">
-                <h2>Post title</h2>
+                    <hr>
 
-                <hr>
+                    <p>{{$post->body}}</p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat justo, finibus sed tristique vel, lobortis eget urna. Integer finibus pretium sapien non eleifend. Quisque fermentum non enim vel feugiat. Quisque viverra, nulla in dictum condimentum, ex tellus semper ipsum, id ultrices purus velit sed nulla. Praesent nibh lacus, suscipit quis sodales id, tempus sed urna. Phasellus magna urna, porttitor id auctor sed, consequat sit amet lectus.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
+                <div class="panel-footer">
+                    Written on {{$post->created_at}}
+                </div>
+
             </div>
-
-            <div class="panel-footer">
-                Written by admin
-            </div>
-
-        </div>
+        @endforeach
 
     </div>
 
@@ -54,7 +55,7 @@
 
                     <div class="col-md-6">
                         <ul class="list-unstyled">
-                            <li><a href="#">Programming</li>
+                            <li><a href="#">Programming</a></li>
                             <li><a href="#">PHP</a></li>
                             <li><a href="#">Laravel</a></li>
                         </ul>
