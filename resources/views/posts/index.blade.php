@@ -19,7 +19,7 @@
                     <hr>
 
                     <p>{{$post->body}}</p>
-                    <a href="#" class="btn btn-primary">Read more</a>
+                    <a href="/post/{{$post->id}}" class="btn btn-primary">Read more</a>
                 </div>
 
                 <div class="panel-footer">
