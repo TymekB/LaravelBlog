@@ -14,11 +14,11 @@
 
                 <img src="{{asset('img/post_noimage.png')}}">
                 <div class="panel-body">
-                    <h2>{{$post->title}}</h2>
+                    <h2>{!! $post->title !!}</h2>
 
                     <hr>
 
-                    <p>{{$post->body}}</p>
+                    <p>{!! $post->body !!}</p>
                     <a href="/post/{{$post->id}}" class="btn btn-primary">Read more</a>
                 </div>
 

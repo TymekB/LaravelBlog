@@ -17,3 +17,5 @@ Route::get('/contact', 'PagesController@contact');
 Route::get('/', 'PostsController@index');
 Route::get('/post/create', 'PostsController@create');
 Route::get('/post/{id}', 'PostsController@show');
+
+Route::post('/post/create', 'PostsController@store');

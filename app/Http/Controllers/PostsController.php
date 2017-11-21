@@ -25,4 +25,22 @@ class PostsController extends Controller
     {
         return view('posts.create');
     }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'title' => 'required|string|min:8',
+            'body' => 'required|string|min:8'
+        ]);
+
+        $post = new Post();
+
+        $post->title = $data['title'];
+        $post->body = $data['body'];
+        $post->user_id = 1;
+
+        $post->save();
+
+        return redirect('/');
+    }
 }

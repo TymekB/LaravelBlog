@@ -11,7 +11,7 @@
         <img src="{{asset('img/post_noimage.png')}}" class="post-img">
 
         <div class="text-justify">
-            <p>{{$post->body}}</p>
+            <p>{!! $post->body !!}</p>
         </div>
 
         <a href="/" class="btn btn-default">Go back</a>
