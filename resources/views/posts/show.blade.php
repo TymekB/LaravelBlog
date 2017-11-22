@@ -14,7 +14,14 @@
             <p>{!! $post->body !!}</p>
         </div>
 
-        <a href="/" class="btn btn-default">Go back</a>
+        <div class="pull-left">
+            <a href="/" class="btn btn-default">Go back</a>
+        </div>
+
+        <div class="pull-right">
+            <a href="#" class="btn btn-success">Edit</a>
+            <a href="/post/delete/{{$post->id}}" class="btn btn-danger">Delete</a>
+        </div>
     </div>
 </div>
 
