@@ -18,10 +18,23 @@
         {{Form::label('body', 'Post body')}}
 
         {{ Form::textarea('body', null, ['class' => 'form-control', 'id' => 'article-ckeditor', 'placeholder' => 'Post body']) }}
+
     </div>
 
-    {{ Form::submit('Create', ['class' => 'btn btn-success']) }}
+    <div class="form-group">
+
+        {{ Form::submit('Create', ['class' => 'btn btn-success']) }}
+
+    </div>
 
     {!! Form::close() !!}
+
+    @foreach($errors->all() as $error)
+
+        <div class="alert alert-danger">
+            {{$error}}
+        </div>
+
+    @endforeach
 
 @endsection
