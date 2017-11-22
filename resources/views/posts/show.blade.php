@@ -19,7 +19,7 @@
         </div>
 
         <div class="pull-right">
-            <a href="#" class="btn btn-success">Edit</a>
+            <a href="/post/edit/{{$post->id}}" class="btn btn-success">Edit</a>
             <a href="/post/delete/{{$post->id}}" class="btn btn-danger">Delete</a>
         </div>
     </div>

@@ -44,6 +44,13 @@ class PostsController extends Controller
         return redirect('/');
     }
 
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+
+        return view('posts.edit')->with('post', $post);
+    }
+
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
