@@ -43,7 +43,7 @@ class PostsController extends Controller
 
         $post->title = $data['title'];
         $post->body = $data['body'];
-        $post->user_id = 1;
+        $post->user_id = Auth::user()->id;
 
         $post->save();
 
