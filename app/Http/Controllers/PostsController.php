@@ -51,6 +51,23 @@ class PostsController extends Controller
         return view('posts.edit')->with('post', $post);
     }
 
+    public function update(Request $request, $id)
+    {
+        $data = $request->validate([
+            'title' => 'required|string|min:8',
+            'body' => 'required|string|min:8'
+        ]);
+
+        $post = Post::findOrFail($id);
+
+        $post->title = $data['title'];
+        $post->body = $data['body'];
+
+        $post->save();
+
+        return redirect('/');
+    }
+
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
