@@ -18,10 +18,17 @@
             <a href="/" class="btn btn-default">Go back</a>
         </div>
 
-        <div class="pull-right">
-            <a href="/post/edit/{{$post->id}}" class="btn btn-success">Edit</a>
-            <a href="/post/delete/{{$post->id}}" class="btn btn-danger">Delete</a>
-        </div>
+        @if(Auth::check())
+
+            @if(Auth::user()->id == $post->user_id)
+                <div class="pull-right">
+                    <a href="/post/edit/{{$post->id}}" class="btn btn-success">Edit</a>
+                    <a href="/post/delete/{{$post->id}}" class="btn btn-danger">Delete</a>
+                </div>
+            @endif
+
+        @endif
+
     </div>
 </div>
 
