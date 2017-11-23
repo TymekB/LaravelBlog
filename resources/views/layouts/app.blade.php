@@ -1,53 +1,77 @@
-<!DOCTYPE HTML>
-
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{config('app.name')}}</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <title>{{ config('app.name') }}</title>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-
 <body>
-<nav class="navbar navbar-inverse navbar-static-top navbar-fixed-topx">
+    <div id="app">
+        <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name') }}
+                    </a>
+                </div>
 
-    <div class="container">
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
 
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">{{config('app.name')}}</a>
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li class="navbar-link dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            @yield('content')
         </div>
 
-        <ul class="nav navbar-nav ">
-            <li><a href="/">Home</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
-        </ul>
     </div>
 
-</nav>
-
-<div class="container">
-    @yield('content')
-</div>
-
-
-
-<script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/app.css')}}"></script>
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace( 'article-ckeditor' );
-</script>
-
+    <!-- Scripts -->
+    <script src="{{ asset('js/jquery.js')  }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
-
 </html>

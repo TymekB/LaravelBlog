@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin-ext');
 html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
@@ -1083,8 +1083,8 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-    /*   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    font-family: 'Roboto', sans-serif;
+    padding-top: 70px; !important;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
@@ -4166,7 +4166,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
     position: relative;
     margin-bottom: 20px;
-    height: 62px;
     border: 1px solid transparent;
 
 }
@@ -4278,11 +4277,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding: 15px 15px;
     font-size: 20px;
     line-height: 20px;
+    color: #f2f2f2;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
     text-decoration: none;
-    color: #ccc !important;
 }
 .navbar-brand > img {
     display: block;
@@ -4329,7 +4328,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 20px;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 300;
 
 }
 
@@ -4517,7 +4517,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #333;
+    /*color: #333;*/
     background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -4598,7 +4598,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-    color: #9d9d9d;
+    color: #f2f2f2;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -6766,13 +6766,6 @@ button.close {
     }
 }
 
-.navbar-brand,
-.navbar-nav li a {
-    line-height: 62px;
-    height: 62px;
-    padding-top: 0;
-    color: #f2f2f2 !important;
-}
 
 .panel img
 {

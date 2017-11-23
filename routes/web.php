@@ -22,3 +22,7 @@ Route::get('/post/edit/{id}', 'PostsController@edit');
 
 Route::post('/post/create', 'PostsController@store');
 Route::post('/post/edit/{id}', 'PostsController@update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
