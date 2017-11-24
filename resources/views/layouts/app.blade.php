@@ -11,6 +11,7 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/fontello/css/fontello.css')}}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -46,12 +47,12 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="/home">Dashboard</a>
+                                        <a href="/home"><i class="icon-sliders"></i>Dashboard</a>
                                     </li>
 
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <i class="icon-power"></i>Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

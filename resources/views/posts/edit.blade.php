@@ -23,7 +23,7 @@
 
     <div class="form-group">
 
-        {{ Form::submit('Update', ['class' => 'btn btn-success']) }}
+        {{ Form::submit('&#xe808;&nbsp;Update post', ['class' => 'btn btn-success', 'style' => 'font-family: fontello, Open Sans']) }}
 
     </div>
 

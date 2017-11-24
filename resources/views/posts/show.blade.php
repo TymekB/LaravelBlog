@@ -22,8 +22,8 @@
 
             @if(Auth::user()->id == $post->user_id)
                 <div class="pull-right">
-                    <a href="/post/edit/{{$post->id}}" class="btn btn-success">Edit</a>
-                    <a href="/post/delete/{{$post->id}}" class="btn btn-danger">Delete</a>
+                    <a href="/post/edit/{{$post->id}}" class="btn btn-success"><i class="icon-pencil"></i>Edit</a>
+                    <a href="/post/delete/{{$post->id}}" class="btn btn-danger"><i class="icon-trash-empty"></i>Delete</a>
                 </div>
             @endif
 
