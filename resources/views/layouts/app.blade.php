@@ -79,5 +79,11 @@
     <script>
         CKEDITOR.replace( 'article-ckeditor' );
     </script>
+
+    <script>
+        $('.clickable-row').click(function(){
+            window.location = $(this).data('href');
+        });
+    </script>
 </body>
 </html>

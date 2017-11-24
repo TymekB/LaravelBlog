@@ -6782,6 +6782,11 @@ button.close {
     margin-bottom: 20px;
 }
 
+.clickable-row
+{
+    cursor: pointer;
+}
+
 /*.navbar-nav li a
 {
     font-size: 15px;

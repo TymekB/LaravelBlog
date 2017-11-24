@@ -15,7 +15,6 @@
                     <tr>
                         <th>id</th>
                         <th>title</th>
-                        <th>body</th>
                         <th>created at</th>
                         <th>last update</th>
                     </tr>
@@ -23,10 +22,9 @@
 
                 <tbody>
                     @foreach($posts as $post)
-                        <tr>
+                        <tr class="clickable-row" data-href="/post/{{$post->id}}">
                             <td>{{$post->id}}</td>
                             <td>{!! $post->title !!}</td>
-                            <td>{!! $post->body !!}</td>
                             <td>{{$post->created_at}}</td>
                             <td>{{$post->updated_at}}</td>
                         </tr>
@@ -35,7 +33,10 @@
             </table>
         @else
             You have no post
+
         @endif
+        <br>
+        <a href="post/create" class="btn btn-success">Create post</a>
     </div>
 </div>
 @endsection
