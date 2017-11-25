@@ -24,7 +24,7 @@ class PostsController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        return view('posts.show')->with('post', $post);
+        return view('posts.show', array('post' => $post, 'comments' => $post->comments));
     }
 
     public function create()
