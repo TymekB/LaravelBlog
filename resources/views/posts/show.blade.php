@@ -29,6 +29,25 @@
 
         @endif
 
+        <div style="clear: both"></div>
+
+        <hr>
+        <h4>Comments</h4>
+
+        <div class="well">
+            <div class="row">
+                <div class="col-md-1">
+                    <img src="{{asset('img/user_noimage.png')}}" style="border-radius: 100%;">
+                </div>
+
+                <div class="col-md-11">
+                    <h4>Comment title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec fringilla tortor, id consectetur nunc. Fusce vitae mauris libero. Fusce libero libero, malesuada ac nibh et, placerat feugiat ligula.</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </div>
 

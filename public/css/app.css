@@ -6787,6 +6787,12 @@ button.close {
     cursor: pointer;
 }
 
+.well h4
+{
+    margin-top: 0;
+    padding: 0;
+}
+
 /*.navbar-nav li a
 {
     font-size: 15px;
