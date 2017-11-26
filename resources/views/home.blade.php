@@ -40,36 +40,42 @@
                 </tbody>
             </table>
         @else
+            <br>
             You have no post
         @endif
 
-        <h4><i class="icon-comment"></i>Your comments</h4>
-        <hr>
+        @if(count($comments) > 0)
+            <h4><i class="icon-comment"></i>Your comments</h4>
+            <hr>
 
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>id</th>
-                <th>body</th>
-                <th>post title</th>
-                <th>created at</th>
-                <th>last update</th>
-            </tr>
-            </thead>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>body</th>
+                    <th>post title</th>
+                    <th>created at</th>
+                    <th>last update</th>
+                </tr>
+                </thead>
 
-            <tbody>
-                @foreach($comments as $comment)
-                    <tr>
-                        <td>{!! $comment->id !!}</td>
-                        <td>{{$comment->body}}</td>
-                        <td>{{$comment->post->title}}</td>
-                        <td>{{$comment->created_at}}</td>
-                        <td>{{$comment->updated_at}}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+                <tbody>
+                    @foreach($comments as $comment)
+                        <tr>
+                            <td>{!! $comment->id !!}</td>
+                            <td>{{$comment->body}}</td>
+                            <td>{{$comment->post->title}}</td>
+                            <td>{{$comment->created_at}}</td>
+                            <td>{{$comment->updated_at}}</td>
+                        </tr>
+                    @endforeach
 
+                </tbody>
+            </table>
+        @else
+            <br>
+            You have no comments
+        @endif
     </div>
 </div>
 @endsection

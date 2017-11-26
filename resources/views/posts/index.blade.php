@@ -29,6 +29,8 @@
             </div>
         @endforeach
 
+        {{$posts->links()}}
+
     </div>
 
     <div class="col-md-4">
@@ -78,5 +80,6 @@
     </div>
 
 </div>
+
 
 @endsection
