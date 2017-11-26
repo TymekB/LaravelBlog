@@ -32,7 +32,30 @@
         <div style="clear: both"></div>
 
         <hr>
-        <h4>Comments <span class="badge">{{count($comments)}}</span></h4>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Leave a comment</div>
+            <div class="panel-body">
+                {!! Form::open() !!}
+                    <div class="form-group">
+                        {{Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3])}}
+                    </div>
+
+                    <div class="form-group">
+                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                    </div>
+
+                {!! Form::close() !!}
+
+                @foreach($errors->all() as $error)
+                    <div class="alert alert-danger">
+                        {{$error}}
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <h4>Comments <span class="badge">{{$commentsNumber}}</span></h4>
 
         @foreach($comments as $comment)
             <div class="well">
@@ -48,6 +71,7 @@
                 </div>
             </div>
         @endforeach
+        {{$comments->links()}}
 
     </div>
 </div>

@@ -45,8 +45,6 @@
         @endif
 
         @if(count($comments) > 0)
-            <h4><i class="icon-comment"></i>Your comments</h4>
-            <hr>
 
             <table class="table table-hover">
                 <thead>

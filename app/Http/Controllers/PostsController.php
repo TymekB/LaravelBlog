@@ -23,8 +23,10 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
+        $commentsNumber = count($post->comments);
+        $comments = $post->comments()->paginate(10);
 
-        return view('posts.show', array('post' => $post, 'comments' => $post->comments));
+        return view('posts.show', array('post' => $post, 'comments' => $comments, 'commentsNumber' => $commentsNumber));
     }
 
     public function create()
