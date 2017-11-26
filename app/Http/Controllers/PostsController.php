@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Comment;
 use Auth;
 
 class PostsController extends Controller
@@ -89,6 +90,7 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
+        $comments = Comment::where('post_id', $post->id);
 
         if($post->user_id != Auth::user()->id)
         {
@@ -96,6 +98,11 @@ class PostsController extends Controller
         }
 
         $post->delete();
+
+        if($comments)
+        {
+            $comments->delete();
+        }
 
         return redirect('/');
     }
