@@ -24,10 +24,10 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        $commentsNumber = count($post->comments);
+        $commentsNum = count($post->comments);
         $comments = $post->comments()->paginate(10);
 
-        return view('posts.show', array('post' => $post, 'comments' => $comments, 'commentsNumber' => $commentsNumber));
+        return view('posts.show', array('post' => $post, 'comments' => $comments, 'commentsNum' => $commentsNum));
     }
 
     public function create()
@@ -50,7 +50,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        return redirect('/');
+        return redirect()->back();
     }
 
     public function edit($id)
@@ -104,6 +104,6 @@ class PostsController extends Controller
             $comments->delete();
         }
 
-        return redirect('/');
+        return redirect()->back();
     }
 }

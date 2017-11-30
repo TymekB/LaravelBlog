@@ -19,10 +19,10 @@ Route::get('/post/create', 'PostsController@create');
 Route::get('/post/{id}', 'PostsController@show');
 Route::get('/post/delete/{id}', 'PostsController@destroy');
 Route::get('/post/edit/{id}', 'PostsController@edit');
-
 Route::post('/post/create', 'PostsController@store');
 Route::post('/post/edit/{id}', 'PostsController@update');
 
+Route::get('/comment/delete/{id}', 'CommentsController@destroy');
 Route::post('/post/{id}', 'CommentsController@store');
 
 Auth::routes();

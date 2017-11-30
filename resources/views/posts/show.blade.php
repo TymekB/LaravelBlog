@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <h4>Comments <span class="badge">{{$commentsNumber}}</span></h4>
+        <h4>Comments <span class="badge">{{$commentsNum}}</span></h4>
 
         @foreach($comments as $comment)
             <div class="well">
