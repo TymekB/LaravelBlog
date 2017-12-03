@@ -1,23 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>Edit post</h1>
+    <h1>Edit comment</h1>
     <hr>
 
     {!! Form::open() !!}
 
     <div class="form-group">
 
-        {{Form::label('title', 'Post title')}}
+        {{Form::label('body', 'Comment body')}}
 
-        {{ Form::text('title', $post->title, ['class' => 'form-control']) }}
-    </div>
-
-    <div class="form-group">
-
-        {{Form::label('body', 'Post body')}}
-
-        {{ Form::textarea('body', $post->body, ['class' => 'form-control', 'id' => 'article-ckeditor', 'placeholder' => 'Post body']) }}
+        {{ Form::textarea('body',$comment->body, ['class' => 'form-control', 'id' => 'article-ckeditor']) }}
 
     </div>
 

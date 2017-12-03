@@ -50,7 +50,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        return redirect()->back();
+        return redirect('/');
     }
 
     public function edit($id)

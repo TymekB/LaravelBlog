@@ -28,9 +28,16 @@ class CommentsController extends Controller
         return redirect()->back();
     }
 
+    public function edit($id)
+    {
+        $comment = Comment::findOrFail($id);
+
+        return view('comments.edit')->with('comment', $comment);
+    }
+
     public function destroy($id)
     {
-        $comment = Comment::find($id);
+        $comment = Comment::findOrFail($id);
 
         $comment->delete();
 

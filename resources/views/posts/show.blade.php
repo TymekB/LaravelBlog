@@ -38,7 +38,7 @@
             <div class="panel-body">
                 {!! Form::open() !!}
                     <div class="form-group">
-                        {{Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3])}}
+                        {{Form::textarea('body', null, ['class' => 'form-control', 'rows' => 4])}}
                     </div>
 
                     <div class="form-group">
