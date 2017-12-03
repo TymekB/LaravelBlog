@@ -50,7 +50,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        return redirect('/');
+        return redirect('/post/'.$post->id);
     }
 
     public function edit($id)
@@ -84,7 +84,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        return redirect('/');
+        return redirect('/post/'.$id);
     }
 
     public function destroy($id)
@@ -104,6 +104,6 @@ class PostsController extends Controller
             $comments->delete();
         }
 
-        return redirect()->back();
+        return redirect('/');
     }
 }

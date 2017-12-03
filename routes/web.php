@@ -25,7 +25,7 @@ Route::post('/post/edit/{id}', 'PostsController@update');
 Route::get('/comment/delete/{id}', 'CommentsController@destroy');
 Route::get('/comment/edit/{id}', 'CommentsController@edit');
 Route::post('/post/{id}', 'CommentsController@store');
-
+Route::post('comment/edit/{id}', 'CommentsController@update');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

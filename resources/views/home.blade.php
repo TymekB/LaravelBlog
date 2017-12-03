@@ -66,13 +66,13 @@
 
                 <tbody>
                     @foreach($comments as $comment)
-                        <tr>
+                        <tr class="clickable-row" data-href="/post/{{$comment->post->id}}">
                             <td>{!! $comment->id !!}</td>
                             <td>{{$comment->body}}</td>
                             <td>{{$comment->post->title}}</td>
                             <td>{{$comment->created_at}}</td>
                             <td>{{$comment->updated_at}}</td>
-                            <td><a href="#" class="btn btn-default btn-sm"><i class="icon-pencil"></i>Edit</a> <a href="/comment/delete/{{$comment->id}}" class="btn btn-danger btn-sm"><i class="icon-trash-empty"></i>Delete</a></td>
+                            <td><a href="/comment/edit/{{$comment->id}}" class="btn btn-default btn-sm"><i class="icon-pencil"></i>Edit</a> <a href="/comment/delete/{{$comment->id}}" class="btn btn-danger btn-sm"><i class="icon-trash-empty"></i>Delete</a></td>
                         </tr>
                     @endforeach
 

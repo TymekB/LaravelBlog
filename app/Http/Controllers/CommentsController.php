@@ -35,6 +35,21 @@ class CommentsController extends Controller
         return view('comments.edit')->with('comment', $comment);
     }
 
+    public function update(Request $request, $commentId)
+    {
+        $data = $request->validate([
+            'body' => 'required|min:8|max:255|string'
+        ]);
+
+        $comment = Comment::findOrFail($commentId);
+
+        $comment->body = $data['body'];
+
+        $comment->save();
+
+        return redirect('/home');
+    }
+
     public function destroy($id)
     {
         $comment = Comment::findOrFail($id);

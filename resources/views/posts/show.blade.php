@@ -34,7 +34,7 @@
         <hr>
 
         <div class="panel panel-default">
-            <div class="panel-heading">Leave a comment</div>
+            <div class="panel-heading"><i class="icon-comment"></i>Leave a comment</div>
             <div class="panel-body">
                 {!! Form::open() !!}
                     <div class="form-group">
